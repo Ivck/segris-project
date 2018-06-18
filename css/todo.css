@@ -1,0 +1,32 @@
+body{
+	background-color: #ffbf00;
+}
+h1{
+	font-family: sans-serif;
+	text-align: center;
+}
+.location{
+	margin-left: 650px;
+}
+.inputstyle{
+	width: 150px;
+	height: 20px;
+	outline: none;
+	background-color: #ffcc00;
+	border: 1px solid black;
+	border-radius: 8px;
+}
+input:hover{
+	background-color: #fdeaa8;
+}
+.buttonstyle{
+	width: 100px;
+	height: 25px;
+	background-color: #ffcc00;
+	border: 1px solid;
+	outline: none;
+	cursor: pointer;
+}
+button:hover{
+	background-color: #fdeaa8;
+}
