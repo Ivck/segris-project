@@ -33,7 +33,7 @@ let input=document.querySelector('input');
 						if (inp.checked) {
 							div1.appendChild(inp);
 							div1.appendChild(li);
-							newinp.disabled=true;
+							inp.disabled=true;
 						
 					}	
 					});	
