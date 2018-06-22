@@ -4,12 +4,21 @@ let input=document.querySelector('input');
 					let butn1=document.getElementById('butn1');
 					let i;
 					let mas=[];
+					
+					
 					button.addEventListener('click',function(){
-					if (input.value!='') {
-			
+				
+					mas.push(input.value);
+					localStorage.setItem('task',mas);
+					
+					
 					let div=document.createElement('div');
 					ul.appendChild(div);
 
+					let div1=document.createElement('div');
+					document.body.appendChild(div1);
+					div1.className +='location'
+					
 					let inp= document.createElement("input");
 					inp.type = "checkbox";
 					div.appendChild(inp);
@@ -19,43 +28,23 @@ let input=document.querySelector('input');
 					li.innerHTML=input.value
 					li.style.display='inline-block'
 					div.appendChild(li);
-					li.addEventListener('click',function(){
-						if (li.style.textDecoration==="") {
-							li.style.textDecoration="line-through";
-						}else{
-							li.style.textDecoration=""
-						}
-						
-					});
+
 					butn1.addEventListener('click',function(){
-						if (inp.checked) {li.remove()
-							inp.remove();
+						if (inp.checked) {
+							div1.appendChild(inp);
+							div1.appendChild(li);
+							newinp.disabled=true;
+						
 					}	
 					});	
-		
-				
-					mas.push(input.value);
-					for (i in mas){
-						i++;
+					input.value=""
 					
-					}
-					
-					input.value=''				
-					
-					
-					localStorage.setItem('task',mas);
-					
-					
-					
-
-					}
-					
-
-					});
-
-					let newmas=localStorage.getItem('task').split(',');		
-					
+					});	
+					let newmas=localStorage.getItem('task').split(',');
 					for(var newi=0;newi!=newmas.length;newi++){
+					let div1=document.createElement('div');
+					document.body.appendChild(div1);
+					div1.className +='location'
 					let newdiv=document.createElement('div');
 					ul.appendChild(newdiv);
 					let newinp= document.createElement("input");
@@ -67,21 +56,17 @@ let input=document.querySelector('input');
 					newli.innerHTML=newmas[newi];
 					newli.style.display='inline-block'
 					newdiv.appendChild(newli);
-						newli.addEventListener('click',function(){
-							if (newli.style.textDecoration==="") {
-								newli.style.textDecoration="line-through";
-							}else{
-								newli.style.textDecoration="";
-							}
 						
+
+					butn1.addEventListener('click',function(){
+						if (newinp.checked) {
+							div1.appendChild(newinp);
+							div1.appendChild(newli);
+							newinp.disabled=true;
+
+					}	
 					});
 
-					
-					butn1.addEventListener('click',function(){
-						if (newinp.checked) {newli.remove()
-							newinp.remove();
-							
-					}	
-					});	
-
+				
 					}
+				
